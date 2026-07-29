@@ -1,0 +1,27 @@
+# Python virtual environment
+.venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# VS Code local settings
+.vscode/
+
+# Raw dataset files
+data/raw/
+
+# Processed data generated locally
+data/processed/*
+!data/processed/.gitkeep
+
+# Generated results
+results/*
+!results/.gitkeep
+
+# Operating system files
+.DS_Store
+Thumbs.db
