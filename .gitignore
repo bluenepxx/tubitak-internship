@@ -1,27 +1,111 @@
-# Python virtual environment
-.venv/
+# ==================================================
+# Python
+# ==================================================
 
-# Python cache files
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache and compiled files
 __pycache__/
 *.py[cod]
+*$py.class
 
-# Jupyter temporary files
+# Test and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+
+# ==================================================
+# Jupyter Notebook
+# ==================================================
+
 .ipynb_checkpoints/
 
-# VS Code local settings
-.vscode/
 
-# Raw dataset files
+# ==================================================
+# IDE settings
+# ==================================================
+
+.vscode/
+.idea/
+
+
+# ==================================================
+# Environment and local configuration
+# ==================================================
+
+.env
+.env.*
+*.local
+
+
+# ==================================================
+# Dataset
+# ==================================================
+
+# Original QMOF dataset must not be uploaded
 data/raw/
 
-# Processed data generated locally
+# Locally generated processed data
 data/processed/*
 !data/processed/.gitkeep
 
-# Generated results
+
+# ==================================================
+# Model files
+# ==================================================
+
+results/models/
+models/
+
+*.joblib
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.onnx
+
+
+# ==================================================
+# Experiment outputs
+# ==================================================
+
+# Keep result folders, ignore generated content by default
+results/tables/*
+!results/tables/.gitkeep
+
+results/figures/*
+!results/figures/.gitkeep
+
+# General result files in the root of results/
 results/*
 !results/.gitkeep
+!results/tables/
+!results/figures/
+!results/models/
 
+
+# ==================================================
+# Logs and temporary files
+# ==================================================
+
+*.log
+logs/
+temp/
+tmp/
+
+
+# ==================================================
 # Operating system files
+# ==================================================
+
 .DS_Store
 Thumbs.db
+desktop.ini
