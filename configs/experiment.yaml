@@ -1,0 +1,39 @@
+data:
+  dataset_path: data/processed/forward_model_selfies.jsonl
+  split_path: data/processed/split_assignments.csv
+
+random_seed: 42
+n_jobs: -1
+
+splits:
+  train_ratio: 0.70
+  validation_ratio: 0.15
+  test_ratio: 0.15
+
+cv_folds: 5
+groupkfold_top_k: 5
+learning_curve_top_k: 3
+learning_curve_fractions: [0.10, 0.25, 0.50, 0.75, 1.00]
+
+preprocessing:
+  tfidf_min_df: 2
+  smoke_min_df: 1
+  max_dense_mb: 1024
+
+results:
+  root: results
+  tables: results/tables
+  figures: results/figures
+  histories: results/histories
+  models: results/models
+  logs: results/logs
+  benchmark_log: results/logs/benchmark.log
+
+checkpoint:
+  resume: false
+
+smoke:
+  rows_per_split: 24
+  cv_folds: 2
+  groupkfold_top_k: 2
+  learning_curve_top_k: 1

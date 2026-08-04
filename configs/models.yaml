@@ -1,0 +1,147 @@
+models:
+  linear_regression:
+    enabled: true
+    parameters: {}
+    smoke_parameters: {}
+  ridge:
+    enabled: true
+    parameters: {alpha: 1.0, solver: lsqr}
+    smoke_parameters: {alpha: 1.0}
+  lasso:
+    enabled: true
+    parameters: {alpha: 0.001, max_iter: 3000, random_state: 42}
+    smoke_parameters: {max_iter: 200}
+  elastic_net:
+    enabled: true
+    parameters: {alpha: 0.001, l1_ratio: 0.5, max_iter: 3000, random_state: 42}
+    smoke_parameters: {max_iter: 200}
+  bayesian_ridge:
+    enabled: true
+    parameters: {}
+    smoke_parameters: {}
+  huber_regressor:
+    enabled: true
+    parameters: {max_iter: 300, epsilon: 1.35}
+    smoke_parameters: {max_iter: 50}
+  sgd_regressor:
+    enabled: true
+    parameters: {loss: squared_error, penalty: elasticnet, max_iter: 2000, tol: 0.001, random_state: 42}
+    smoke_parameters: {max_iter: 100}
+  passive_aggressive_regressor:
+    enabled: true
+    parameters: {max_iter: 1000, tol: 0.001, random_state: 42}
+    smoke_parameters: {max_iter: 100}
+  kneighbors_regressor:
+    enabled: true
+    parameters: {n_neighbors: 7, weights: distance}
+    smoke_parameters: {n_neighbors: 3}
+  linear_svr:
+    enabled: true
+    parameters: {C: 1.0, max_iter: 5000, random_state: 42}
+    smoke_parameters: {max_iter: 200}
+  poisson_regressor:
+    enabled: true
+    parameters: {alpha: 1.0, max_iter: 1000, tol: 1.0e-6}
+    smoke_parameters: {max_iter: 100, tol: 1.0e-4}
+  svr_rbf:
+    enabled: true
+    parameters: {kernel: rbf, C: 10.0, epsilon: 0.1, gamma: scale, tol: 1.0e-3, cache_size: 2048, shrinking: true, max_iter: 20000}
+    smoke_parameters: {C: 1.0, cache_size: 256, max_iter: 500}
+  nu_svr:
+    enabled: true
+    parameters: {kernel: rbf, C: 10.0, nu: 0.5, gamma: scale, tol: 1.0e-3, cache_size: 2048, shrinking: true, max_iter: 20000}
+    smoke_parameters: {C: 1.0, nu: 0.4, cache_size: 256, max_iter: 500}
+  nystroem_ridge:
+    enabled: true
+    parameters: {kernel: rbf, gamma: null, n_components: 512, alpha: 1.0, solver: lsqr, random_state: 42}
+    smoke_parameters: {n_components: 32, alpha: 1.0}
+  pls_regression:
+    enabled: true
+    parameters: {n_components: 8}
+    smoke_parameters: {n_components: 2}
+  mlp_regressor:
+    enabled: true
+    parameters: {hidden_layer_sizes: [128, 64], activation: relu, early_stopping: true, max_iter: 250, random_state: 42}
+    smoke_parameters: {hidden_layer_sizes: [32], max_iter: 20}
+  decision_tree:
+    enabled: true
+    parameters: {max_depth: 24, min_samples_leaf: 2, random_state: 42}
+    smoke_parameters: {max_depth: 6}
+  extra_tree:
+    enabled: true
+    parameters: {max_depth: 24, min_samples_leaf: 2, random_state: 42}
+    smoke_parameters: {max_depth: 6}
+  random_forest:
+    enabled: true
+    parameters: {n_estimators: 200, min_samples_leaf: 2, random_state: 42, n_jobs: -1}
+    smoke_parameters: {n_estimators: 5, max_depth: 6}
+  extra_trees:
+    enabled: true
+    parameters: {n_estimators: 200, min_samples_leaf: 2, random_state: 42, n_jobs: -1}
+    smoke_parameters: {n_estimators: 5, max_depth: 6}
+  gradient_boosting:
+    enabled: true
+    parameters: {n_estimators: 150, learning_rate: 0.05, max_depth: 3, random_state: 42}
+    smoke_parameters: {n_estimators: 5, max_depth: 2}
+  hist_gradient_boosting:
+    enabled: true
+    parameters: {max_iter: 150, learning_rate: 0.05, random_state: 42}
+    smoke_parameters: {max_iter: 5}
+  adaboost:
+    enabled: true
+    parameters: {n_estimators: 150, learning_rate: 0.05, random_state: 42}
+    smoke_parameters: {n_estimators: 5}
+  bagging:
+    enabled: true
+    parameters: {n_estimators: 80, random_state: 42, n_jobs: -1}
+    smoke_parameters: {n_estimators: 5}
+  voting_regressor:
+    enabled: true
+    parameters: {n_jobs: -1}
+    smoke_parameters: {n_jobs: 1}
+  stacking_regressor:
+    enabled: true
+    parameters: {cv: 3, n_jobs: -1}
+    smoke_parameters: {cv: 2, n_jobs: 1}
+  xgb_regressor:
+    enabled: true
+    parameters: {n_estimators: 250, learning_rate: 0.05, max_depth: 6, subsample: 0.9, colsample_bytree: 0.9, objective: reg:squarederror, random_state: 42, n_jobs: -1, verbosity: 0}
+    smoke_parameters: {n_estimators: 5, max_depth: 2}
+  lgbm_regressor:
+    enabled: true
+    parameters: {n_estimators: 250, learning_rate: 0.05, num_leaves: 31, random_state: 42, n_jobs: -1, verbose: -1}
+    smoke_parameters: {n_estimators: 5, num_leaves: 7}
+  catboost_regressor:
+    enabled: true
+    parameters: {iterations: 250, learning_rate: 0.05, depth: 6, loss_function: RMSE, random_seed: 42, verbose: false, allow_writing_files: false}
+    smoke_parameters: {iterations: 5, depth: 2}
+  selfies_transformer:
+    enabled: true
+    parameters:
+      random_state: 42
+      embedding_dim: 64
+      transformer_heads: 4
+      transformer_layers: 2
+      feedforward_dim: 128
+      dropout: 0.10
+      hidden_dim: 128
+      epochs: 30
+      batch_size: 64
+      patience: 6
+      learning_rate: 0.001
+      weight_decay: 0.0001
+      node_max_length_cap: 64
+      linker_max_length_cap: 256
+      device: auto
+      verbose: false
+    smoke_parameters:
+      embedding_dim: 16
+      transformer_heads: 2
+      transformer_layers: 1
+      feedforward_dim: 32
+      hidden_dim: 32
+      epochs: 2
+      batch_size: 8
+      patience: 1
+      node_max_length_cap: 32
+      linker_max_length_cap: 64
