@@ -1,0 +1,14 @@
+metric,value
+row_count,17348.0
+unique_qmof_id,17348.0
+duplicate_qmof_id,0.0
+unique_input_signatures,16285.0
+density_missing,0.0
+density_mean,1.6369100238257437
+density_std,0.6321080567419162
+pld_missing,0.0
+pld_mean,3.146186588079318
+pld_std,3.460139721335707
+lcd_missing,0.0
+lcd_mean,4.719373703596957
+lcd_std,4.124107380969981

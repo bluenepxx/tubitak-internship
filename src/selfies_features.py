@@ -7,7 +7,6 @@ import math
 from typing import Iterable, Sequence
 
 import numpy as np
-import pandas as pd
 
 PAD_TOKEN = "<PAD>"
 UNK_TOKEN = "<UNK>"

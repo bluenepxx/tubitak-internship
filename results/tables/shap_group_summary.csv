@@ -1,0 +1,16 @@
+target,model,feature_group,n_features_in_group,sum_mean_abs_shap,pct_of_total_abs_shap
+density,lgbm_regressor,linker_selfies,838,0.5836178636907547,47.3345329275141
+density,lgbm_regressor,node_selfies,727,0.4108198744397546,33.31969098918762
+density,lgbm_regressor,point_group,31,0.12255213085260393,9.939633849613248
+density,lgbm_regressor,topology,197,0.11597437001018168,9.406142233685042
+density,lgbm_regressor,topology_missing,1,0.0,0.0
+pld,extra_trees,linker_selfies,838,1.6422231445660362,42.08354127668722
+pld,extra_trees,node_selfies,727,1.011798040798238,25.928294065576484
+pld,extra_trees,point_group,31,0.6304884991176907,16.156871777682447
+pld,extra_trees,topology,197,0.534939575685828,13.708339081932138
+pld,extra_trees,topology_missing,1,0.08284388044242749,2.1229537981217064
+lcd,extra_trees,linker_selfies,838,1.9675665786436247,42.71932302202482
+lcd,extra_trees,node_selfies,727,1.362609254616151,29.584637964767467
+lcd,extra_trees,point_group,31,0.5456605835712672,11.847248770629582
+lcd,extra_trees,topology,197,0.5777860092903113,12.544748135280296
+lcd,extra_trees,topology_missing,1,0.15217757129247522,3.3040421072978283

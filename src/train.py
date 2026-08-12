@@ -25,7 +25,6 @@ from sklearn.model_selection import GroupKFold, KFold
 
 from .data_loader import (
     FEATURE_COLUMNS,
-    TARGET_COLUMNS,
     DatasetBundle,
     dataset_content_hash,
     select_columns,

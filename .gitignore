@@ -60,8 +60,12 @@ data/processed/*
 # Model files
 # ==================================================
 
-results/models/
-models/
+# Trained models are not committed (2 of the 3 winners are ~170MB each, over
+# GitHub's non-LFS limit). Regenerate them with:
+#   python -m src.run_30_models --mode full --stages final_test
+results/models/*
+!results/models/.gitkeep
+/models/
 
 *.joblib
 *.pkl
@@ -77,19 +81,21 @@ models/
 # Experiment outputs
 # ==================================================
 
-# Keep result folders, ignore generated content by default
-results/tables/*
-!results/tables/.gitkeep
+# results/tables, results/plots and results/figures are the canonical outputs
+# the report is based on -- these are committed, unlike the rest of results/.
 
-results/figures/*
-!results/figures/.gitkeep
+# Old/broken experiment runs kept around locally for reference, never used in
+# the report (see HANDOFF_UPDATE.md section 0)
+results/corrupt_backup/
+results/smoke_backup/
+results/run_manifest_kfold_run_backup.json
 
-# General result files in the root of results/
-results/*
-!results/.gitkeep
-!results/tables/
-!results/figures/
-!results/models/
+# Staging copies of Colab-trained results already merged into results/tables/
+results/transformer_import/
+
+# Regenerated on every run, not needed for review
+results/logs/
+results/histories/
 
 
 # ==================================================

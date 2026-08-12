@@ -51,6 +51,8 @@ def make_tfidf_vectorizer(min_df: int = 2) -> TfidfVectorizer:
         preprocessor=None,
         token_pattern=None,
         lowercase=False,
+        # unigrams + bigrams over SELFIES tokens, min_df=2 to drop one-off tokens.
+        # Chosen as a practical default, no separate grid search over these two.
         ngram_range=(1, 2),
         min_df=min_df,
     )
